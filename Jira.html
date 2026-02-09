@@ -1,0 +1,1784 @@
+<html
+        xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<title>Jira</title>
+<style type="text/css">
+table {
+    mso-displayed-decimal-separator:"\.";
+    mso-displayed-thousand-separator:"\,";
+}
+body
+{
+    margin: 0px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    color:black;
+}
+
+</style>
+<META HTTP-EQUIV="Content-Type" Content="application/vnd.ms-excel; charset=UTF-8">
+<!-- JRA-7598 - ensure fields (e.g. description) occupy only one cell - even fields containing newlines. -->
+<!--
+Vertical align all cells to the top, in order to align all issue rows of issuetable to the top,
+since Excel does not use or save the css files it is hardcoded here.
+-->
+<style>
+@page
+{
+mso-page-orientation:landscape;
+margin:.25in .25in .5in .25in;
+mso-header-margin:.5in;
+mso-footer-margin:.25in;
+mso-footer-data:"&R&P of &N";
+mso-horizontal-page-align:center;
+mso-vertical-page-align:center;
+}
+
+td.issuekey,
+td.issuetype,
+td.status {
+    mso-style-parent: "";
+    mso-number-format: \@;
+    text-align: left;
+}
+br
+{
+    mso-data-placement:same-cell;
+}
+
+td
+{
+    vertical-align: top;
+}
+</style>
+
+<!--[if gte mso 9]><xml>
+<x:ExcelWorkbook>
+<x:ExcelWorksheets>
+<x:ExcelWorksheet>
+<x:Name>general_report</x:Name>
+<x:WorksheetOptions>
+<x:Print>
+<x:ValidPrinterInfo/>
+</x:Print>
+</x:WorksheetOptions>
+</x:ExcelWorksheet>
+</x:ExcelWorksheets>
+</x:ExcelWorkbook>
+</xml><![endif]-->
+</head>
+<body>
+
+<table border="1">
+    <tr bgcolor="#205081" height="30">
+        <td colspan="45">
+            <img src="https://sasanzidsadik03.atlassian.net/images/icon-jira-family-logo.png" width="57" height="30" border="0" alt="Jira">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="45">
+            <a href="https://sasanzidsadik03.atlassian.net/issues/?jql=project+%3D+QP0S+ORDER+BY+created+DESC">Jira</a>
+        </td>
+    </tr>
+    <tr>
+                <td colspan="45">
+            Displaying <strong>17</strong> issues at <strong>09/Feb/26 10:57 AM</strong>.
+        </td>
+    </tr>
+</table>
+
+
+
+
+                                        <table id="issuetable" class="aui " border="1" cellpadding="3" cellspacing="1" width="100%">
+                        <thead>
+        <tr class="rowHeader">
+            
+                                                            <th class="colHeaderLink headerrow-statuscategorychangedate" data-id="statuscategorychangedate">
+                                                        Status Category Changed
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-issuetype" data-id="issuetype">
+                                                        Issue Type
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-issuekey" data-id="issuekey">
+                                                        Key
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-timespent" data-id="timespent">
+                                                        Time Spent
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-timeoriginalestimate" data-id="timeoriginalestimate">
+                                                        Original estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-project" data-id="project">
+                                                        Project
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-description" data-id="description">
+                                                        Description
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-fixVersions" data-id="fixVersions">
+                                                        Fix versions
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregatetimespent" data-id="aggregatetimespent">
+                                                        Σ Time Spent
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-statusCategory" data-id="statusCategory">
+                                                        Status Category
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-parent" data-id="parent">
+                                                        Parent
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-resolution" data-id="resolution">
+                                                        Resolution
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10015" data-id="customfield_10015">
+                                                        Start date
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-security" data-id="security">
+                                                        Security Level
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregatetimeestimate" data-id="aggregatetimeestimate">
+                                                        Σ Remaining Estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-resolutiondate" data-id="resolutiondate">
+                                                        Resolved
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-workratio" data-id="workratio">
+                                                        Work Ratio
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-summary" data-id="summary">
+                                                        Summary
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-lastViewed" data-id="lastViewed">
+                                                        Last Viewed
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-watches" data-id="watches">
+                                                        Watchers
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-thumbnail" data-id="thumbnail">
+                                                        Images
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-creator" data-id="creator">
+                                                        Creator
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-subtasks" data-id="subtasks">
+                                                        Sub-tasks
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-created" data-id="created">
+                                                        Created
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10020" data-id="customfield_10020">
+                                                        Sprint
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10021" data-id="customfield_10021">
+                                                        Flagged
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-reporter" data-id="reporter">
+                                                        Reporter
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregateprogress" data-id="aggregateprogress">
+                                                        Σ Progress
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10000" data-id="customfield_10000">
+                                                        Development
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-priority" data-id="priority">
+                                                        Priority
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10001" data-id="customfield_10001">
+                                                        Team
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-labels" data-id="labels">
+                                                        Labels
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10016" data-id="customfield_10016">
+                                                        Story point estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10017" data-id="customfield_10017">
+                                                        Issue color
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-environment" data-id="environment">
+                                                        Environment
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10019" data-id="customfield_10019">
+                                                        Rank
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-timeestimate" data-id="timeestimate">
+                                                        Remaining Estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregatetimeoriginalestimate" data-id="aggregatetimeoriginalestimate">
+                                                        Σ Original Estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-duedate" data-id="duedate">
+                                                        Due date
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-progress" data-id="progress">
+                                                        Progress
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-issuelinks" data-id="issuelinks">
+                                                        Linked Issues
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-votes" data-id="votes">
+                                                        Votes
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-assignee" data-id="assignee">
+                                                        Assignee
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-updated" data-id="updated">
+                                                        Updated
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-status" data-id="status">
+                                                        Status
+                                                    </th>
+                                                                    </tr>
+    </thead>
+    <tbody>
+                    
+
+                <tr id="issuerow10248" rel="10248" data-issuekey="QP0S-18" class="issuerow">
+                                            <td class="statuscategorychangedate"> 09/Feb/26 1:30 AM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QP0S-18" href="https://sasanzidsadik03.atlassian.net/browse/QP0S-18">QP0S-18</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA project 01 scrum
+</td>
+                                            <td class="description">            Steps to Reproduce:<br/>
+<br/>
+Login as a valid user<br/>
+Book a flight<br/>
+Proceed to the payment page<br/>
+Do not select any card type<br/>
+Fill in the remaining required fields<br/>
+Click on Pay Now<br/>
+<br/>
+Expected Result:<br/>
+The system should prevent payment and display a validation error when no card type is selected<br/>
+<br/>
+Actual Result:<br/>
+The system allows the payment process to continue even when no card type is selected<br/>
+<br/>
+ !Bug16.jpg|thumbnail! 
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Payment → System allows payment when no card type is selected
+    </p>
+</td>
+                                            <td class="lastViewed"> 09/Feb/26 10:50 AM </td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for QP0S-18" href="https://sasanzidsadik03.atlassian.net/secure/attachment/10163/Bug16.jpg">
+            Bug16.jpg
+        </a>
+    </td>
+                                            <td class="creator">            Sanzid Sadik
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 09/Feb/26 1:30 AM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Sanzid Sadik
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="priority">           High
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i00053:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 09/Feb/26 10:50 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10247" rel="10247" data-issuekey="QP0S-17" class="issuerow">
+                                            <td class="statuscategorychangedate"> 09/Feb/26 1:10 AM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QP0S-17" href="https://sasanzidsadik03.atlassian.net/browse/QP0S-17">QP0S-17</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA project 01 scrum
+</td>
+                                            <td class="description">            Steps to Reproduce:<br/>
+Login as a valid user<br/>
+Book a flight<br/>
+Proceed to the payment page<br/>
+Enter a valid card number with an expired expiry date<br/>
+Fill in the remaining required fields<br/>
+Click on Pay Now<br/>
+<br/>
+Expected Result:<br/>
+The system should prevent payment and display an error message when expired card details are used<br/>
+<br/>
+Actual Result:<br/>
+The system allows the payment process to continue even when expired card details are entered !BUG15.jpg|thumbnail! 
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Payment → System allows payment with expired card details
+    </p>
+</td>
+                                            <td class="lastViewed"> 09/Feb/26 10:50 AM </td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for QP0S-17" href="https://sasanzidsadik03.atlassian.net/secure/attachment/10161/BUG15.jpg">
+            BUG15.jpg
+        </a>
+    </td>
+                                            <td class="creator">            Sanzid Sadik
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 09/Feb/26 1:10 AM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Sanzid Sadik
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="priority">           Highest
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0004v:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 09/Feb/26 10:50 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10246" rel="10246" data-issuekey="QP0S-16" class="issuerow">
+                                            <td class="statuscategorychangedate"> 09/Feb/26 1:03 AM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QP0S-16" href="https://sasanzidsadik03.atlassian.net/browse/QP0S-16">QP0S-16</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA project 01 scrum
+</td>
+                                            <td class="description">            Steps to Reproduce:<br/>
+Login as a valid user<br/>
+Book a flight<br/>
+Proceed to the payment page<br/>
+Select a card type that does not match the entered card number<br/>
+Fill in the remaining required fields<br/>
+Click on Pay Now<br/>
+<br/>
+Expected Result:<br/>
+The system should prevent payment and display an error message when the card type does not match the card number.<br/>
+<br/>
+ !Bug14.jpg|thumbnail! 
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Payment → System allows payment when card type does not match card number
+    </p>
+</td>
+                                            <td class="lastViewed"> 09/Feb/26 10:50 AM </td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for QP0S-16" href="https://sasanzidsadik03.atlassian.net/secure/attachment/10159/Bug14.jpg">
+            Bug14.jpg
+        </a>
+    </td>
+                                            <td class="creator">            Sanzid Sadik
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 09/Feb/26 1:03 AM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Sanzid Sadik
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="priority">           Highest
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0004n:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 09/Feb/26 10:50 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10213" rel="10213" data-issuekey="QP0S-15" class="issuerow">
+                                            <td class="statuscategorychangedate"> 09/Feb/26 12:07 AM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QP0S-15" href="https://sasanzidsadik03.atlassian.net/browse/QP0S-15">QP0S-15</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA project 01 scrum
+</td>
+                                            <td class="description">            Steps to Reproduce:<br/>
+Login as a valid user<br/>
+Book a flight<br/>
+Proceed to the payment page<br/>
+Enter a card number with fewer digits than the required length<br/>
+Fill in the remaining required fields<br/>
+Click on Pay Now<br/>
+<br/>
+Expected Result:<br/>
+The system should prevent payment and display an error message when the card number length is less than the required digits<br/>
+<br/>
+Actual Result:<br/>
+The system allows the payment process to continue even when the card number length is less than the required digits !Bug13.jpg|thumbnail! 
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Payment → System allows payment when card number length is less than required digits
+    </p>
+</td>
+                                            <td class="lastViewed"> 09/Feb/26 10:49 AM </td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for QP0S-15" href="https://sasanzidsadik03.atlassian.net/secure/attachment/10125/Bug13.jpg">
+            Bug13.jpg
+        </a>
+    </td>
+                                            <td class="creator">            Sanzid Sadik
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 09/Feb/26 12:07 AM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Sanzid Sadik
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="priority">           Highest
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0004f:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 09/Feb/26 10:50 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10212" rel="10212" data-issuekey="QP0S-14" class="issuerow">
+                                            <td class="statuscategorychangedate"> 09/Feb/26 12:00 AM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QP0S-14" href="https://sasanzidsadik03.atlassian.net/browse/QP0S-14">QP0S-14</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA project 01 scrum
+</td>
+                                            <td class="description">            Steps to Reproduce:<br/>
+Login as a valid user<br/>
+Book a flight<br/>
+Proceed to the payment page<br/>
+Enter a card number with more digits than the allowed length<br/>
+Fill in the remaining required fields<br/>
+Click on Pay Now<br/>
+<br/>
+Expected Result:<br/>
+The system should prevent payment and display an error message when the card number length exceeds the required digits.<br/>
+<br/>
+Actual Result:<br/>
+The system allows the payment process to continue even when the card number length exceeds the required digits.<br/>
+ !Bug12.jpg|thumbnail! 
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Payment → System allows payment when card number length exceeds required digits
+    </p>
+</td>
+                                            <td class="lastViewed"> 09/Feb/26 10:49 AM </td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for QP0S-14" href="https://sasanzidsadik03.atlassian.net/secure/attachment/10123/Bug12.jpg">
+            Bug12.jpg
+        </a>
+    </td>
+                                            <td class="creator">            Sanzid Sadik
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 09/Feb/26 12:00 AM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Sanzid Sadik
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="priority">           Highest
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i00047:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 09/Feb/26 10:49 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10179" rel="10179" data-issuekey="QP0S-13" class="issuerow">
+                                            <td class="statuscategorychangedate"> 08/Feb/26 11:14 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QP0S-13" href="https://sasanzidsadik03.atlassian.net/browse/QP0S-13">QP0S-13</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA project 01 scrum
+</td>
+                                            <td class="description">            Steps to Reproduce:<br/>
+Login as a valid user<br/>
+Book a flight<br/>
+Proceed to the payment page<br/>
+Leave the card number field empty<br/>
+Fill in the remaining required fields<br/>
+Click on Pay Now<br/>
+<br/>
+Expected Result:<br/>
+The system should prevent payment and display a validation error when the card number field is empty<br/>
+<br/>
+Actual Result:<br/>
+The system allows the payment process to continue even when the card number field is empty !Bug11.jpg|thumbnail! 
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Payment → System allows payment when card number field is empty
+    </p>
+</td>
+                                            <td class="lastViewed"> 09/Feb/26 10:49 AM </td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for QP0S-13" href="https://sasanzidsadik03.atlassian.net/secure/attachment/10121/Bug11.jpg">
+            Bug11.jpg
+        </a>
+    </td>
+                                            <td class="creator">            Sanzid Sadik
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 08/Feb/26 11:14 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Sanzid Sadik
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="priority">           Highest
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0003z:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 09/Feb/26 10:49 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10178" rel="10178" data-issuekey="QP0S-12" class="issuerow">
+                                            <td class="statuscategorychangedate"> 08/Feb/26 11:02 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QP0S-12" href="https://sasanzidsadik03.atlassian.net/browse/QP0S-12">QP0S-12</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA project 01 scrum
+</td>
+                                            <td class="description">            Steps to Reproduce:<br/>
+Login as a valid user<br/>
+Book a flight<br/>
+Proceed to the payment page<br/>
+Enter non-numeric characters in the card number field<br/>
+Fill in the remaining required fields<br/>
+Click on Pay Now<br/>
+<br/>
+Expected Result:<br/>
+The system should prevent payment and display an error message when the card number contains non-numeric characters<br/>
+<br/>
+Actual Result:<br/>
+The system allows the payment process to continue even when the card number contains non-numeric characters.<br/>
+<br/>
+ !Bug10.jpg|thumbnail! 
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Payment → System allows payment with non-numeric card number
+    </p>
+</td>
+                                            <td class="lastViewed"> 09/Feb/26 10:48 AM </td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for QP0S-12" href="https://sasanzidsadik03.atlassian.net/secure/attachment/10119/Bug10.jpg">
+            Bug10.jpg
+        </a>
+    </td>
+                                            <td class="creator">            Sanzid Sadik
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 08/Feb/26 11:02 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Sanzid Sadik
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="priority">           Highest
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0003r:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 09/Feb/26 10:48 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10177" rel="10177" data-issuekey="QP0S-11" class="issuerow">
+                                            <td class="statuscategorychangedate"> 08/Feb/26 10:54 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QP0S-11" href="https://sasanzidsadik03.atlassian.net/browse/QP0S-11">QP0S-11</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA project 01 scrum
+</td>
+                                            <td class="description">            Steps to Reproduce:<br/>
+Login as a valid user<br/>
+Book a flight<br/>
+Proceed to the payment page<br/>
+Enter a valid card number<br/>
+Enter an invalid card expiry month/year combination<br/>
+Fill in the remaining required fields<br/>
+Click on Pay Now<br/>
+<br/>
+Expected Result:<br/>
+The system should prevent payment and display an error message for the invalid card expiry month/year combination<br/>
+<br/>
+Actual Result:<br/>
+The system allows the payment process to continue even when an invalid card expiry month/year combination is entered.<br/>
+<br/>
+ !Misssed Bug1.jpg|thumbnail! 
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Payment → System allows payment with invalid card expiry month/year
+    </p>
+</td>
+                                            <td class="lastViewed"> 09/Feb/26 10:48 AM </td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for QP0S-11" href="https://sasanzidsadik03.atlassian.net/secure/attachment/10117/Misssed+Bug1.jpg">
+            Misssed Bug1.jpg
+        </a>
+    </td>
+                                            <td class="creator">            Sanzid Sadik
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 08/Feb/26 10:54 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Sanzid Sadik
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="priority">           Highest
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0003j:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 09/Feb/26 10:48 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10176" rel="10176" data-issuekey="QP0S-10" class="issuerow">
+                                            <td class="statuscategorychangedate"> 08/Feb/26 10:49 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QP0S-10" href="https://sasanzidsadik03.atlassian.net/browse/QP0S-10">QP0S-10</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA project 01 scrum
+</td>
+                                            <td class="description">            Steps to Reproduce:<br/>
+Login as a valid user<br/>
+Book a flight<br/>
+Proceed to the payment page<br/>
+Leave the card holder’s name field empty<br/>
+Fill in the remaining required fields<br/>
+Click on Pay Now<br/>
+<br/>
+Expected Result:<br/>
+The system should prevent payment and display a validation error when the card holder’s name field is empty<br/>
+<br/>
+Actual Result:<br/>
+The system allows the payment process to continue even when the card holder’s name field is empty.<br/>
+<br/>
+ !Bug9.jpg|thumbnail! 
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Payment → System allows payment when card holder’s name field is empty
+    </p>
+</td>
+                                            <td class="lastViewed"> 09/Feb/26 10:48 AM </td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for QP0S-10" href="https://sasanzidsadik03.atlassian.net/secure/attachment/10115/Bug9.jpg">
+            Bug9.jpg
+        </a>
+    </td>
+                                            <td class="creator">            Sanzid Sadik
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 08/Feb/26 10:49 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Sanzid Sadik
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="priority">           Highest
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0003b:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 09/Feb/26 10:48 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10175" rel="10175" data-issuekey="QP0S-9" class="issuerow">
+                                            <td class="statuscategorychangedate"> 08/Feb/26 10:45 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QP0S-9" href="https://sasanzidsadik03.atlassian.net/browse/QP0S-9">QP0S-9</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA project 01 scrum
+</td>
+                                            <td class="description">            Steps to Reproduce:<br/>
+Login as a valid user<br/>
+Book a flight<br/>
+Proceed to the payment page<br/>
+Enter a valid card number<br/>
+Enter numeric or special characters in the card holder’s name field<br/>
+Fill in the remaining required fields<br/>
+Click on Pay Now<br/>
+<br/>
+Expected Result:<br/>
+The system should prevent payment and display an error message when the card holder’s name contains numeric or special characters<br/>
+<br/>
+Actual Result:<br/>
+The system allows the payment process to continue even when the card holder’s name contains numeric or special characters !Bug8.jpg|thumbnail! 
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Payment → System allows payment with invalid card holder name
+    </p>
+</td>
+                                            <td class="lastViewed"> 09/Feb/26 10:48 AM </td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for QP0S-9" href="https://sasanzidsadik03.atlassian.net/secure/attachment/10113/Bug8.jpg">
+            Bug8.jpg
+        </a>
+    </td>
+                                            <td class="creator">            Sanzid Sadik
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 08/Feb/26 10:45 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Sanzid Sadik
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="priority">           High
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i00033:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 09/Feb/26 10:48 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10142" rel="10142" data-issuekey="QP0S-8" class="issuerow">
+                                            <td class="statuscategorychangedate"> 08/Feb/26 10:23 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QP0S-8" href="https://sasanzidsadik03.atlassian.net/browse/QP0S-8">QP0S-8</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA project 01 scrum
+</td>
+                                            <td class="description">            Steps to Reproduce:<br/>
+Login as a valid user<br/>
+Book a flight<br/>
+Proceed to the payment page<br/>
+Enter an invalid card number<br/>
+Fill in the remaining required fields<br/>
+Click on Pay Now<br/>
+<br/>
+Expected Result:<br/>
+The system should prevent payment and display an error message for the invalid card number<br/>
+<br/>
+Actual Result:<br/>
+The system allows the payment process to continue even when an invalid card number is entered<br/>
+ !Bug7.jpg|thumbnail! 
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Payment → System allows payment with invalid card number
+    </p>
+</td>
+                                            <td class="lastViewed"> 09/Feb/26 10:48 AM </td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for QP0S-8" href="https://sasanzidsadik03.atlassian.net/secure/attachment/10111/Bug7.jpg">
+            Bug7.jpg
+        </a>
+    </td>
+                                            <td class="creator">            Sanzid Sadik
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 08/Feb/26 10:23 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Sanzid Sadik
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="priority">           Highest
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0002v:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 09/Feb/26 10:48 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10141" rel="10141" data-issuekey="QP0S-7" class="issuerow">
+                                            <td class="statuscategorychangedate"> 08/Feb/26 10:10 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QP0S-7" href="https://sasanzidsadik03.atlassian.net/browse/QP0S-7">QP0S-7</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA project 01 scrum
+</td>
+                                            <td class="description">            Steps to Reproduce:<br/>
+Login as a valid user<br/>
+Proceed to the payment page<br/>
+Leave all payment fields empty<br/>
+Click on Pay Now<br/>
+<br/>
+Expected Result:<br/>
+The system should prevent payment and display validation error messages for the required fields<br/>
+<br/>
+Actual Result:<br/>
+The system allows the payment process to continue even when all fields are left empty<br/>
+<br/>
+ !Bug6.jpg|thumbnail! 
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Payment → System allows payment when all fields are empty
+    </p>
+</td>
+                                            <td class="lastViewed"> 09/Feb/26 10:48 AM </td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for QP0S-7" href="https://sasanzidsadik03.atlassian.net/secure/attachment/10109/Bug6.jpg">
+            Bug6.jpg
+        </a>
+    </td>
+                                            <td class="creator">            Sanzid Sadik
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 08/Feb/26 10:10 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Sanzid Sadik
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="priority">           Highest
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0002n:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 09/Feb/26 10:48 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10108" rel="10108" data-issuekey="QP0S-6" class="issuerow">
+                                            <td class="statuscategorychangedate"> 08/Feb/26 2:44 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QP0S-6" href="https://sasanzidsadik03.atlassian.net/browse/QP0S-6">QP0S-6</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA project 01 scrum
+</td>
+                                            <td class="description">            Steps to Reproduce:<br/>
+Login as a valid user<br/>
+Search for a round-trip flight<br/>
+Select a return date in the past<br/>
+Proceed with booking<br/>
+<br/>
+Expected Result:<br/>
+The system should prevent booking and display an error message when the return date is in the past<br/>
+<br/>
+Actual Result:<br/>
+The system allows booking a flight even when the return date is in the past<br/>
+<br/>
+ !bug5.jpg|thumbnail! 
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Booking → System allows booking when return date is in the past
+    </p>
+</td>
+                                            <td class="lastViewed"> 09/Feb/26 10:48 AM </td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for QP0S-6" href="https://sasanzidsadik03.atlassian.net/secure/attachment/10075/bug5.jpg">
+            bug5.jpg
+        </a>
+    </td>
+                                            <td class="creator">            Sanzid Sadik
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 08/Feb/26 2:44 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Sanzid Sadik
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="priority">           High
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0002f:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 09/Feb/26 10:48 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10107" rel="10107" data-issuekey="QP0S-5" class="issuerow">
+                                            <td class="statuscategorychangedate"> 08/Feb/26 2:39 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QP0S-5" href="https://sasanzidsadik03.atlassian.net/browse/QP0S-5">QP0S-5</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA project 01 scrum
+</td>
+                                            <td class="description">            Steps to Reproduce:<br/>
+Login as a valid user<br/>
+Search for a round-trip flight<br/>
+Select a return date that is earlier than the departure date<br/>
+Proceed with booking<br/>
+<br/>
+Expected Result:<br/>
+The system should prevent booking and display an error message when the return date is earlier than the departure date<br/>
+<br/>
+Actual Result:<br/>
+The system allows booking a flight even when the return date is earlier than the departure date<br/>
+<br/>
+ !bug4.jpg|thumbnail! 
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Booking → System allows booking when return date is earlier than departure date
+    </p>
+</td>
+                                            <td class="lastViewed"> 09/Feb/26 10:45 AM </td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for QP0S-5" href="https://sasanzidsadik03.atlassian.net/secure/attachment/10073/bug4.jpg">
+            bug4.jpg
+        </a>
+    </td>
+                                            <td class="creator">            Sanzid Sadik
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 08/Feb/26 2:39 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Sanzid Sadik
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="priority">           High
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i00027:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 09/Feb/26 10:47 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10106" rel="10106" data-issuekey="QP0S-4" class="issuerow">
+                                            <td class="statuscategorychangedate"> 08/Feb/26 2:26 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QP0S-4" href="https://sasanzidsadik03.atlassian.net/browse/QP0S-4">QP0S-4</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA project 01 scrum
+</td>
+                                            <td class="description">            Steps to Reproduce:<br/>
+Login as a valid user<br/>
+Select  flight<br/>
+Select the same location for both departure and destination<br/>
+Proceed with booking<br/>
+<br/>
+Expected Result:<br/>
+The system should prevent booking and display an error message when departure and destination locations are the same<br/>
+<br/>
+Actual Result:<br/>
+The system allows booking a flight even when the departure and destination locations are the same<br/>
+<br/>
+ !Screenshot (235).png|thumbnail! 
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Booking → System allows booking with same departure and destination
+    </p>
+</td>
+                                            <td class="lastViewed"> 09/Feb/26 10:45 AM </td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for QP0S-4" href="https://sasanzidsadik03.atlassian.net/secure/attachment/10071/Screenshot+%28235%29.png">
+            Screenshot (235).png
+        </a>
+    </td>
+                                            <td class="creator">            Sanzid Sadik
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 08/Feb/26 2:26 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Sanzid Sadik
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="priority">           High
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0001z:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 09/Feb/26 10:45 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10105" rel="10105" data-issuekey="QP0S-3" class="issuerow">
+                                            <td class="statuscategorychangedate"> 08/Feb/26 2:19 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QP0S-3" href="https://sasanzidsadik03.atlassian.net/browse/QP0S-3">QP0S-3</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA project 01 scrum
+</td>
+                                            <td class="description">            Steps to Reproduce:<br/>
+Login as a valid user<br/>
+Select flight<br/>
+Select a departure date in the past<br/>
+Proceed with booking<br/>
+<br/>
+Expected Result:<br/>
+The system should prevent booking and display an error message when the departure date is in the past<br/>
+<br/>
+Actual Result:<br/>
+The system allows booking a flight even when the departure date is in the past<br/>
+<br/>
+ !Bug2.jpg|thumbnail! 
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Booking  → Validation missing for past departure date
+    </p>
+</td>
+                                            <td class="lastViewed"> 09/Feb/26 10:44 AM </td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for QP0S-3" href="https://sasanzidsadik03.atlassian.net/secure/attachment/10069/Bug2.jpg">
+            Bug2.jpg
+        </a>
+    </td>
+                                            <td class="creator">            Sanzid Sadik
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 08/Feb/26 2:19 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Sanzid Sadik
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0001r:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 08/Feb/26 2:19 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10071" rel="10071" data-issuekey="QP0S-1" class="issuerow">
+                                            <td class="statuscategorychangedate"> 03/Feb/26 8:30 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="QP0S-1" href="https://sasanzidsadik03.atlassian.net/browse/QP0S-1">QP0S-1</a>
+</td>
+                                            <td class="timespent"></td>
+                                            <td class="timeoriginalestimate"></td>
+                                            <td class="project">    QA project 01 scrum
+</td>
+                                            <td class="description">            h4. Steps to reproduce: <br/>
+<br/>
+!Bug1.jpg|width=264,alt=&quot;Bug1.jpg&quot;!<br/>
+<br/>
+# Login as a valid user<br/>
+# Book a flight with valid data<br/>
+# Pay for the flight<br/>
+<br/>
+h4. Expected result:<br/>
+<br/>
+There should be a button to return and book a new flight<br/>
+<br/>
+h4.  Actual Result: <br/>
+<br/>
+User is stuck in the flight information page and can’t go back 
+    </td>
+                                            <td class="fixVersions">    &nbsp;
+</td>
+                                            <td class="aggregatetimespent"></td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate"></td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Booking-&gt;  User can&#39;t go back to booking page
+    </p>
+</td>
+                                            <td class="lastViewed"> 09/Feb/26 10:44 AM </td>
+                                            <td class="watches">1</td>
+                                            <td class="thumbnail">            <a aria-label="Select to download the image for QP0S-1" href="https://sasanzidsadik03.atlassian.net/secure/attachment/10033/Bug1.jpg">
+            Bug1.jpg
+        </a>
+    </td>
+                                            <td class="creator">            Sanzid Sadik
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 03/Feb/26 8:30 PM </td>
+                                            <td class="customfield_10020"></td>
+                                            <td class="customfield_10021"></td>
+                                            <td class="reporter">            Sanzid Sadik
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="customfield_10000"></td>
+                                            <td class="priority">           High
+    </td>
+                                            <td class="customfield_10001">    None
+</td>
+                                            <td class="labels"></td>
+                                            <td class="customfield_10016"></td>
+                                            <td class="customfield_10017"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0001j:
+  </td>
+                                            <td class="timeestimate"></td>
+                                            <td class="aggregatetimeoriginalestimate"></td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="issuelinks"></td>
+                                            <td class="votes">0</td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 09/Feb/26 10:44 AM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+        </tbody>
+    </table>
+    <div class="end-of-stable-message"></div>
+            <table border="1" >
+<tr>
+    <td bgcolor="#dddddd" colspan="45"><font size="1">
+        Generated at Mon Feb 09 04:57:26 UTC 2026 by Sanzid Sadik using Jira 1001.0.0-SNAPSHOT#100290-rev:347e97499c4a0ae286090ee1a10ba45663601a23.
+    </font></td>
+</tr>
+</table>
+
+</body>
+</html>
